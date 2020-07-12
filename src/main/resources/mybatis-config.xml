@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 加载数据库配置 -->
+    <properties resource="db.properties" />
+
+    <!-- 打印sql日志 -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!-- 指定整个包下的类都是别名 -->
+    <typeAliases>
+        <package name="com.mouday.pojo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 将包内的映射器接口实现全部注册为映射器 -->
+    <mappers>
+        <mapper resource="mapper/PersonMapper.xml"/>
+    </mappers>
+</configuration>
