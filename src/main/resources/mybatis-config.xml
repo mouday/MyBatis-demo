@@ -27,7 +27,7 @@
         </environment>
     </environments>
 
-    <!-- 将包内的映射器接口实现全部注册为映射器 -->
+    <!-- 映射文件 -->
     <mappers>
         <mapper resource="mapper/PersonMapper.xml"/>
     </mappers>
